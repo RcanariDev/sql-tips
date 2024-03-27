@@ -21,6 +21,22 @@ order by Compania, Fecha, Hora
 
 ## 12. Crear procedimiento (Estructura de Fecha) - 1 loop
 
+- Crear tabla temporal
+
+```sql
+create table ##FactFecha(
+Fecha date not null
+--Hora int
+--Dia int,
+--Mes int,
+--Anio nvarchar(20),
+--DiaSemana int,
+--NombreDiaSemana nvarchar(20),
+--SemanaMes int,
+--NthOccurrence int
+)
+```
+
 - Siempre incluir el **begin** después de ***while*** loop.
 
 ```sql
@@ -49,6 +65,23 @@ end
 <br />
 
 ## 13. Crear procedimiento (Estructura de Fecha) - 2 loop
+
+- Crear tabla temporal
+
+```sql
+create table ##FactFecha(
+Fecha date not null,
+Hora int,
+Dia int,
+Mes int,
+Anio nvarchar(20),
+DiaSemana int,
+NombreDiaSemana nvarchar(20),
+SemanaMes int,
+NthOccurrence int
+)
+```
+
 
 - Siempre incluir el **begin** después de ***while*** loop.
 
