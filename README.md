@@ -15,4 +15,6 @@ order by Compania, Fecha, Hora
 ```
 <br />
 
-<img src="/img/img11.jpg" width=60% height=60%>
+<p align="center">
+  <img src="/img/img11.jpg" width=60% height=60%>
+</p>
