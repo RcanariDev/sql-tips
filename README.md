@@ -21,7 +21,7 @@ order by Compania, Fecha, Hora
 
 ## 12. Crear procedimiento (Estructura de Fecha) - 1 loop
 
-Siempre incluir el **begin** después de ***while*** loop.
+- Siempre incluir el **begin** después de ***while*** loop.
 
 ```sql
 create or alter procedure EstructuraFecha
@@ -50,7 +50,7 @@ end
 
 ## 13. Crear procedimiento (Estructura de Fecha) - 2 loop
 
-Siempre incluir el **begin** después de ***while*** loop.
+- Siempre incluir el **begin** después de ***while*** loop.
 
 ```sql
 create or alter procedure EstructuraFecha
