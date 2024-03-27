@@ -19,6 +19,9 @@ order by Compania, Fecha, Hora
   <img src="/img/img11.jpg" width=60% height=60%>
 </p>
 
+<br />
+<br />
+
 ## 12. Crear procedimiento (Estructura de Fecha) - 1 loop
 
 - Crear tabla temporal
