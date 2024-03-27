@@ -19,8 +19,9 @@ order by Compania, Fecha, Hora
   <img src="/img/img11.jpg" width=60% height=60%>
 </p>
 
-## 12. Crear procedimiento - 1 loop
+## 12. Crear procedimiento (Estructura de Fecha) - 1 loop
 
+Siempre incluir el **begin** después de ***while*** loop.
 
 ```sql
 create or alter procedure EstructuraFecha
@@ -47,7 +48,9 @@ end
 <br />
 <br />
 
-## 13. Crear procedimiento - 2 loop
+## 13. Crear procedimiento (Estructura de Fecha) - 2 loop
+
+Siempre incluir el **begin** después de ***while*** loop.
 
 ```sql
 create or alter procedure EstructuraFecha
@@ -66,8 +69,6 @@ begin
 			while (@Hora <= 23)
 			begin
 
-			--set @v_nth = (select count(*) from ##FactFecha where DATEPART(YEAR, Fecha) = DATEPART(year, @Fecha) and DATEPART(MONTH, Fecha) = DATEPART(MONTH, @Fecha) and DATEPART(WEEKDAY, Fecha) = DATEPART(WEEKDAY, @Fecha) and Fecha < @Fecha) + 1;
-
 			set @v_nth = (
 			
 			select count(*)
@@ -83,22 +84,6 @@ begin
 			and A.Fecha < @Fecha
 			
 			) + 1;
-
-			--set @v_nth = (
-			--	with TablaGeneral as (
-
-			--	select Fecha, Dia, Mes, Anio, DiaSemana, NombreDiaSemana, NthOccurrence, count(*) Total
-			--	from ##FactFecha
-			--	group by Fecha, Dia, Mes, Anio, DiaSemana, NombreDiaSemana, NthOccurrence
-
-			--	)
-			--	select count(*)
-			--	from TablaGeneral
-			--	where DATEPART(YEAR, Fecha) = DATEPART(year, convert(date, @Fecha)) 
-			--	and DATEPART(MONTH, Fecha) = DATEPART(MONTH, @Fecha) 
-			--	and DATEPART(WEEKDAY, Fecha) = DATEPART(WEEKDAY, @Fecha) 
-			--	and Fecha < @Fecha
-			--) + 1;
 
 			insert into ##FactFecha(Fecha, Hora, Dia, Mes, Anio, DiaSemana, NombreDiaSemana, SemanaMes, NthOccurrence)
 			values(@Fecha, @Hora, DATEPART(DAY, @Fecha), DATEPART(MONTH, @Fecha), DATEPART(YEAR, @Fecha), DATEPART(WEEKDAY, @Fecha) + 1, datename(WEEKDAY, @Fecha), FLOOR((datepart(day, @Fecha)-1)/7)+1, @v_nth);
