@@ -135,8 +135,17 @@ begin
 end
 ```
 
-## 14. Pivotear tabla con ***cte***
+<br />
+<br />
 
+## 14. Pivotear tabla 
+
+<br />
+
+- Utilizando CTE y la palabra reservada ***pivot***
+
+
+<br />
 ```sql
 with TablaGeneral16_2 as (
 
