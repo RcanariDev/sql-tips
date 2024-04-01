@@ -134,3 +134,30 @@ begin
 
 end
 ```
+
+## 14. Pivotear tabla con ***cte***
+
+```sql
+with TablaGeneral16_2 as (
+
+...
+
+)
+, TablaGeneral17 as (
+
+select *
+from TablaGeneral16_2
+pivot (
+
+sum(TotalCasos)
+for TipoEstado in ([Anulado por el Vendedor], [Anulado por el Cliente], [Anulado por la Tienda], [Listo Recoger], [En Cocina], [Anulado por el Proveedor de Delivery]
+					, [En Entrega], [Programado], [Entregado], [Anulado por el Sistema], [Completado], [En Preparación], [Pendiente])
+
+) as PivotTable
+
+)
+select *
+from TablaGeneral17
+
+```
+
