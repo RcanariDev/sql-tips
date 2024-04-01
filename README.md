@@ -146,6 +146,7 @@ end
 
 
 <br />
+
 ```sql
 with TablaGeneral16_2 as (
 
