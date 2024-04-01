@@ -171,3 +171,8 @@ from TablaGeneral17
 
 ```
 
+<p align="center">
+  <img src="/img/pivot12.PNG" width=60% height=60%>
+</p>
+
+
