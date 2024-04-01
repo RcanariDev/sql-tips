@@ -142,6 +142,15 @@ end
 
 <br />
 
+- Como estaba antes
+
+<p align="center">
+  <img src="/img/pivot11.PNG" width=60% height=60%>
+</p>
+
+
+
+<br />
 - Utilizando CTE y la palabra reservada ***pivot***
 
 
