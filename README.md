@@ -186,3 +186,51 @@ from TablaGeneral17
 </p>
 
 
+<br />
+<br />
+## 15. Crear funciones
+
+<br />
+ 
+- Primer ejemplo
+
+
+```sql
+create or alter function EtClienteDigital (
+@Var1 varchar(50)
+)
+returns varchar(50)
+	begin
+		declare @Otro varchar(50)
+		set @Otro = case when @Var1 in ('WhatsApp', 'Landing') then 'ClienteDigital'
+					else 'Otro' end
+	return @Otro
+	end
+go
+```
+
+<br />
+
+- Segundo ejemplo
+
+```sql
+create or alter function CambiarEtiqueta (
+@Var1 varchar(100)
+)
+returns varchar(100)
+	begin
+		declare @Otro varchar(100)
+		set @Otro = case when @Var1 like 'Anulado%' then 'Anulado'
+						when @Var1 = 'Completado' then 'Completado'
+						when @Var1 = 'Listo Recoger' then 'ListoRecoger'
+						when @Var1 = 'En Entrega' then 'EnEntrega'
+						when @Var1 = 'En Preparación' then 'EnPreparacion'
+						when @Var1 = 'En Cocina' then 'EnCocina'
+						else @Var1 end
+	return @Otro
+	end
+go
+```
+
+
+
