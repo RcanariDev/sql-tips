@@ -152,7 +152,7 @@ end
 
 <br />
 
-- Utilizando CTE y la palabra reservada **pivot** y ***row_number() over***
+- Utilizando CTE y la palabra reservada ***pivot***
 
 
 <br />
