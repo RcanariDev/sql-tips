@@ -234,4 +234,55 @@ go
 ```
 
 
+<br />
+<br />
+
+## 16. Crear secuencia de pasos PERO que no sea PROCEDURE
+
+<br />
+
+- Crear la tabla temporal
+
+```sql
+create table #FechaCompania(
+Fecha date null,
+Compania nvarchar(50) null
+)
+go
+```
+
+
+<br />
+
+- Crear la secuencia de pasos y ejecutarla
+
+```sql
+declare @Var1 date;
+
+set @Var1 = '2021-12-22';
+
+while (@Var1 <= CONVERT(DATE, GETDATE()))
+	begin
+
+	insert into #FechaCompania
+	values(@Var1, 'DON TITO'),
+			(@Var1, 'PRIMOS CHICKEN BAR'),
+			(@Var1, 'TORI')
+
+	set @Var1 = DATEADD(day, 1, @Var1);
+
+	end;
+go
+```
+
+<br />
+
+- Evaluar
+
+```sql
+select *
+from #FechaCompania
+go
+```
+
 
