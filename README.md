@@ -343,7 +343,17 @@ from Tabla1
 <br />
 
 
+## 19. Unir información con un periodo anterior
 
+<br />
 
+- Se tiene que hacer un **left join** y **dateadd()** pare restarle un periodo de tiempo (puede ser día, mes, etc)
 
+```sql
+select *
+from Tabla1 A
+left join Tabla1 B on DATEADD(day, -1, A.Fecha) = B.Fecha
+```
 
+<br />
+<br />
