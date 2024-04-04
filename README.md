@@ -303,8 +303,9 @@ select *
 from Tabla1
 ```
 
-2. Uso de WITH
+<br />
 
+2. Uso de WITH
 
 ```sql
 with Tabla1 as (
