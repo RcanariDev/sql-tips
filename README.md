@@ -286,3 +286,31 @@ go
 ```
 
 
+<br />
+<br />
+
+## 17. Insertar data
+
+<br />
+
+- Hay de 2 formas
+	1. Simple
+
+```sql
+insert into #NombreTabla
+select *
+from Tabla1
+```
+
+	2. Uso de WITH
+
+```sql
+with Tabla1 as (
+)
+insert into #NombreTabla
+select *
+from Tabla1
+
+```
+
+<br />
