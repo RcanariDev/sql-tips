@@ -294,7 +294,8 @@ go
 <br />
 
 - Hay de 2 formas
-	1. Simple
+  
+1. Simple
 
 ```sql
 insert into #NombreTabla
@@ -302,7 +303,8 @@ select *
 from Tabla1
 ```
 
-	2. Uso de WITH
+2. Uso de WITH
+
 
 ```sql
 with Tabla1 as (
