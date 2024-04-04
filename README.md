@@ -316,4 +316,34 @@ from Tabla1
 
 ```
 
+
 <br />
+<br />
+
+## 18. Obtener decimales de una división de enteros
+
+<br />
+
+- Se debe aplicar **CAST()** pero directamente a la variable y NO a la operación en general
+
+```sql
+select cast(Var1 as decimal(8, 2)) / cast(Var2 as decimal(8, 2)
+from Tabla1
+```  
+
+- Otro ejemplo
+
+```sql
+select case when C.TotalOrdenes = 0 then cast(0 as decimal(8, 2)) else (cast(A.TotalOrdenes as decimal(8, 2)) - cast(C.TotalOrdenes as decimal(8, 2)))/cast(C.TotalOrdenes as decimal(8, 2))*100 end as PorTotalOrdenesHoyAyer
+from Tabla1
+```
+
+
+<br />
+<br />
+
+
+
+
+
+
