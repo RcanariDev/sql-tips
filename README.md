@@ -289,7 +289,7 @@ go
 <br />
 <br />
 
-## 17. Insertar data
+## 17. Insertar data a través del SELECT
 
 <br />
 
