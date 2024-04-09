@@ -138,7 +138,7 @@ end
 <br />
 <br />
 
-## 14. Pivotear tabla 
+## 14. PIVOT - Pivotear tabla 
 
 <br />
 
@@ -184,6 +184,42 @@ from TablaGeneral17
 <p align="center">
   <img src="/img/pivot12.PNG" width=60% height=60%>
 </p>
+
+<br />
+
+- Otro ejemplo
+
+```sql
+with TablaGeneral11 as (
+
+select CONVERT(date, DATEADD(hour, -5, A.FechaOrden)) as FechaOrden, DATEPART(hour, DATEADD(hour, -5, A.FechaOrden)) as HoraOrden, D.NombreCompania, E.MetodoPago, count(*) as TotalAnuladosCanalVenta
+from FactVentas A
+left join DimCanalVenta B on A.IdCanalVenta = B.IdCanalVenta
+left join DimEstados C on A.IdEstado = C.IdEstado
+left join DimCompania D on A.IdCompania = D.IdCompania
+left join DimMetodoPago E on A.IdMetodoPago = E.IdMetodoPago
+where CONVERT(date, DATEADD(hour, -5, A.FechaOrden)) = CONVERT(date, '2023-03-31')
+--where CONVERT(date, DATEADD(hour, -5, A.FechaOrden)) = CONVERT(date, getdate())
+--where CONVERT(date, DATEADD(hour, -5, A.FechaOrden)) = CONVERT(date, @VarFecha)
+and C.TipoEstado like 'Anulado%'
+group by CONVERT(date, DATEADD(hour, -5, A.FechaOrden)), DATEPART(hour, DATEADD(hour, -5, A.FechaOrden)), D.NombreCompania, E.MetodoPago
+
+)
+, TablaGeneral12 as (
+
+select FechaOrden, HoraOrden, NombreCompania, [YAPE] as ANULADOSyape, [RAPPI] as ANULADOSrappi, [ONLINE] as ANULADOSonline, [EFECTIVO] as ANULADOSefectivo, [Pago Link] as ANULADOSpagolink, [POS VISA] as ANULADOSposvisa, [POS MASTERCARD] as ANULADOSposmastercards, [PedidosYa] as ANULADOSpedidosya
+from TablaGeneral11
+pivot(
+
+sum(TotalAnuladosCanalVenta)
+for MetodoPago in ([YAPE], [RAPPI], [ONLINE], [EFECTIVO], [Pago Link], [POS VISA], [POS MASTERCARD], [PedidosYa]) 
+
+) as PivotTable
+
+)
+select *
+from TablaGeneral12
+```
 
 
 <br />
