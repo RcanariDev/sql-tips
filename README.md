@@ -85,40 +85,6 @@ NthOccurrence int
 )
 ```
 
-- Otro ejemplo de 2 loops
-
-```sql
-create table #TablaFecha(
-FechaOrdenInicial date null,
-FechaOrdenFinal date null
-)
-
-declare @Var1 date;
-set @Var1 = '2021-12-22';
-
-declare @Var2 date;
-set @Var2 = '2021-12-22';
-
-while (@Var1 <= CONVERT(DATE, GETDATE()))
-	begin
-
-	while (@Var2 > DATEADD(day, -7, @Var1))
-		begin
-		
-		set @Var2 = DATEADD(day, -1, @Var2);
-
-		insert into #TablaFecha
-		values (@Var1, @Var2);
-
-		end;
-
-	set @Var1 = DATEADD(day, 1, @Var1);
-	set @Var2 = @Var1;
-
-	end;
-```
-
-<br />
 <br />
 
 - Siempre incluir el **begin** después de ***while*** loop.
@@ -171,7 +137,43 @@ end
 ```
 
 <br />
+
+- Otro ejemplo de 2 loops
+
+```sql
+create table #TablaFecha(
+FechaOrdenInicial date null,
+FechaOrdenFinal date null
+)
+
+declare @Var1 date;
+set @Var1 = '2021-12-22';
+
+declare @Var2 date;
+set @Var2 = '2021-12-22';
+
+while (@Var1 <= CONVERT(DATE, GETDATE()))
+	begin
+
+	while (@Var2 > DATEADD(day, -7, @Var1))
+		begin
+		
+		set @Var2 = DATEADD(day, -1, @Var2);
+
+		insert into #TablaFecha
+		values (@Var1, @Var2);
+
+		end;
+
+	set @Var1 = DATEADD(day, 1, @Var1);
+	set @Var2 = @Var1;
+
+	end;
+```
+
 <br />
+<br />
+
 
 ## 14. PIVOT - Pivotear tabla 
 
