@@ -448,3 +448,21 @@ from Tabla1
 
 <br />
 <br />
+
+
+## 21. Agregar Ceros adelante
+
+<br />
+
+Se utiliza **format(Columna, '00')**
+
+<br />
+
+```sql
+select format(Col1, '000')
+from Tabla1
+```
+
+
+<br />
+<br />
