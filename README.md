@@ -431,3 +431,20 @@ left join Tabla1 B on DATEADD(day, -1, A.Fecha) = B.Fecha
 
 <br />
 <br />
+
+
+## 20. Concatenar columnas
+
+<br />
+
+Se utiliza empleando **||**
+
+<br />
+
+```sql
+select Col1 || Col2 || Col3 as UnionCols
+from Tabla1
+```
+
+<br />
+<br />
