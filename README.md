@@ -491,4 +491,22 @@ group by Fecha, NombreCompania, Hora
 <br />
 <br />
 
+## 23. Contar distintos
+
+<br />
+
+- Se utiliza **count(distinct** NombreVat **)**
+
+<br />
+
+```sql
+select FechaOrdenAjustada, NombreCompania, count(distinct IdClienteDif) TotalClientesDistintosNuevos
+from TablaGeneral14
+where TipoCliente = 'Nuevo'
+group by FechaOrdenAjustada, NombreCompania
+```
+
+<br />
+<br />
+
 
