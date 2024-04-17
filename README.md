@@ -466,3 +466,29 @@ from Tabla1
 
 <br />
 <br />
+
+
+## 22. Crear una suma acumulada
+
+<br />
+
+```sql
+select Fecha, NombreCompania, Hora
+		, sum(TotalOrdenes) as TotalOrdenes
+		, sum(sum(TotalOrdenes)) over (partition by Fecha, NombreCompania order by Hora) as SumaAcumulado
+from TablaCliente2
+group by Fecha, NombreCompania, Hora
+```
+
+<br />
+
+<p align="center">
+  <img src="/img/pe11.jpg" width=30% height=30%>
+  &nbsp; &nbsp; &nbsp; &nbsp;
+  <img src="/img/pe12.jpg" width=30% height=30%>
+</p>
+
+<br />
+<br />
+
+
