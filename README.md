@@ -484,7 +484,7 @@ group by Fecha, NombreCompania, Hora
 
 <p align="center">
   <img src="/img/pe11.jpg" width=30% height=30%>
-  &nbsp; &nbsp; &nbsp; &nbsp;
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
   <img src="/img/pe12.jpg" width=30% height=30%>
 </p>
 
