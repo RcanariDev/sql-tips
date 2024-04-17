@@ -523,7 +523,7 @@ with Tabla11 as (
 ...
 )
 select count(distinct IdCliente) as TotalClientesDistintos
-		, sum(case when TipoCliente = 'Nuevo' then 1 else 0 end) as TotalClientesDistintosNuevos
+	, sum(case when TipoCliente = 'Nuevo' then 1 else 0 end) as TotalClientesDistintosNuevos
 from Tabla11
 
 ```
