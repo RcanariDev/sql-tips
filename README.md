@@ -510,3 +510,28 @@ group by FechaOrdenAjustada, NombreCompania
 <br />
 
 
+## 24. Sumar cumpliendo una condición
+
+<br />
+
+- Sumar registro que cumplar una condición directament **count( case when ... )**
+
+<br />
+
+```sql
+with Tabla11 as (
+...
+)
+select count(distinct IdCliente) as TotalClientesDistintos
+		, sum(case when TipoCliente = 'Nuevo' then 1 else 0 end) as TotalClientesDistintosNuevos
+from Tabla11
+
+```
+
+<br />
+<br />
+
+
+
+
+
