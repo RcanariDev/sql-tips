@@ -539,7 +539,7 @@ with Tabla11 as (
 ...
 )
 select sum(case when CanalVentaGeneral = 'Canal Digital' then PrecioSinIgv else 0 end) as SumaCanalDigital
-		,  cast(sum(case when CanalVentaGeneral = 'Canal Digital' then PrecioSinIgv else 0 end) as decimal(8, 2)) / cast(sum(PrecioSinIgv) as decimal(8, 2))*100 as PorCanalDigital
+	, cast(sum(case when CanalVentaGeneral = 'Canal Digital' then PrecioSinIgv else 0 end) as decimal(8, 2)) / cast(sum(PrecioSinIgv) as decimal(8, 2))*100 as PorCanalDigital
 from Tabla11
 ```
 
