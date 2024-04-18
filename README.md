@@ -529,6 +529,21 @@ from Tabla11
 ```
 
 <br />
+
+- Sumar pero tomando en cuenta otra variable y no solamente 0 y 1
+
+<br />
+
+```sql
+with Tabla11 as (
+...
+)
+select sum(case when CanalVentaGeneral = 'Canal Digital' then PrecioSinIgv else 0 end) as SumaCanalDigital
+		,  cast(sum(case when CanalVentaGeneral = 'Canal Digital' then PrecioSinIgv else 0 end) as decimal(8, 2)) / cast(sum(PrecioSinIgv) as decimal(8, 2))*100 as PorCanalDigital
+from Tabla11
+```
+
+<br />
 <br />
 
 
