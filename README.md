@@ -549,4 +549,63 @@ from Tabla11
 
 
 
+## 25. Crear un procedimiento que reciba un parámetro
+
+<br />
+
+- Como crearlo
+
+<br />
+
+```sql
+
+create or alter procedure ActResumenVentas1 @Fecha nvarchar(50)
+as begin
+
+declare @VarFecha nvarchar(50);
+set @VarFecha = @Fecha;
+
+...
+
+end;
+```
+
+<br />
+
+- Como llamarlo o ejecutarlo
+
+```sql
+exec ActResumenVentas1 @Fecha = '2024-03-16'
+```
+
+ó
+
+```sql
+exec ActResumenVentas1 '2024-03-16'
+```
+
+<br />
+<br />
+
+## 26. Crear unos pasos para hacer un loop en un procedimiento
+
+<br />
+
+```sql
+declare @Var1 nvarchar(50);
+
+set @Var1 = '2024-03-09';
+
+while (@Var1 >= CONVERT(DATE, '2024-01-01'))
+	begin
+
+	exec ActResumenVentas1 @Fecha = @Var1; --ó también: exec ActResumenVentas1 @Var1;
+
+	set @Var1 = DATEADD(day, -1, CONVERT(DATE, @Var1));
+
+	end;
+go
+```
+
+
 
