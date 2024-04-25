@@ -447,6 +447,18 @@ from Tabla1
 ```
 
 <br />
+
+- O también con el símbolo '+' (PERO SE TIENE QUE ASEGURAR QUE LAS COLUMNAS SON CARACTERES Y NO NUMERICAS)
+
+<br />
+
+```sql
+select cast(Col1 as nvarchar(50)) + cast(Col3 as nvarchar(50)) + cast(Col3 as nvarchar(50)) as UnionCols
+from Tabla1
+```
+
+
+<br />
 <br />
 
 
