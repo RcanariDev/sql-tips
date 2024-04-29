@@ -619,5 +619,21 @@ while (@Var1 >= CONVERT(DATE, '2024-01-01'))
 go
 ```
 
+<br />
+<br />
+
+## 27. Diferencia entre 2 DATETIME
+
+<br />
+
+```r
+select datediff(minute, dateadd(hour, -5, A.FechaOrden), dateadd(hour, -5, A.OrdenCompletada)) as TiempoRealOrdenMin
+from FactVentas A
+```
+
+
+<br />
+<br />
+
 
 
