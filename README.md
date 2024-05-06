@@ -636,4 +636,23 @@ from FactVentas A
 <br />
 
 
+## 28. Utilizar ROW_NUMBER()
+
+<br />
+
+- Se utiliza **row_number()** para contabilizar los más recientes
+
+- El **sum(1)** es para repetir la suma de esos valores
+
+<br/>
+
+```r
+select IdDireccion, IdCadDireccionCliente, IdCadDireccion, IdCadCliente, Direccion, Latitud, Longitud, Codigopostal, Departamento, Provincia, Distrito, IsDefault, Creado, Modificado
+		, ROW_NUMBER() over (partition by IdCadCliente order by Creado) as OrdenCliente
+		, SUM(1) OVER (PARTITION BY IdCadCliente) AS TotalOrdenCliente
+from DimDireccion
+```
+
+<br />
+<br />
 
