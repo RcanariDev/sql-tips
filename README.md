@@ -67,6 +67,55 @@ end
 <br />
 <br />
 
+## 12.1 Crear una tabla Fecha - 1 loop
+
+<br />
+
+```sql
+-- drop table if exists DimTiempo
+
+--select '2021-01-01'
+--select DATEPART(QUARTER, '2021-12-01')
+
+CREATE TABLE DimTiempo (
+  Fecha date NOT NULL,
+  Anio int NOT NULL,
+  Mes int NOT NULL,
+  NombreMes nvarchar(40) null,
+  Dia int NOT NULL,
+  NombreDia nvarchar(40) null,
+  Semana int NOT NULL,
+  Semestre int NOT NULL,
+  process_date datetime not null
+
+)
+go 
+
+
+declare @Var1 date;
+
+set @Var1 = '2021-01-01';
+
+while (@Var1 <= '2028-01-01')
+	begin
+
+	insert into DimTiempo
+	values(@Var1, DATEPART(YEAR, @Var1), DATEPART(MONTH, @Var1), DATENAME(MONTH, @Var1), DATEPART(day, @Var1)
+			, DATENAME(WEEKDAY, @Var1), DATEPART(WEEK, @Var1), DATEPART(QUARTER, @Var1), GETDATE())
+
+	set @Var1 = DATEADD(day, 1, @Var1);
+
+	end;
+go
+
+
+select *
+from DimTiempo
+```
+
+<br />
+<br />
+
 ## 13. Crear procedimiento (Estructura de Fecha) - 2 loop
 
 - Crear tabla temporal
