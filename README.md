@@ -718,12 +718,12 @@ from DimDireccion
 ```r
 create or replace table `stg_aimo_pe_food_new_prd.payments`
 (
-	_id string,
+	id string,
 	`order` string,
 
 	..................
 
-    process_date datetime,
+    	process_date datetime,
 	process_date_date date
 )
 PARTITION BY process_date_date
