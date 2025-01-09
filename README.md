@@ -707,21 +707,29 @@ from DimDireccion
 
 
 
-## 29. Utilizar ROW_NUMBER()
+## 29. Crear campo de tabla con PALABRA RESERVADA
 
 <br />
 
-- Se utiliza **row_number()** para contabilizar los más recientes
-
-- El **sum(1)** es para repetir la suma de esos valores
-
+- Se utiliza: `nombre_columna`
+- 
 <br/>
 
 ```r
-select IdDireccion, IdCadDireccionCliente, IdCadDireccion, IdCadCliente, Direccion, Latitud, Longitud, Codigopostal, Departamento, Provincia, Distrito, IsDefault, Creado, Modificado
-		, ROW_NUMBER() over (partition by IdCadCliente order by Creado) as OrdenCliente
-		, SUM(1) OVER (PARTITION BY IdCadCliente) AS TotalOrdenCliente
-from DimDireccion
+create or replace table `stg_aimo_pe_food_new_prd.payments`
+(
+	_id string,
+	`order` string,
+
+	..................
+
+    process_date datetime,
+	process_date_date date
+)
+PARTITION BY process_date_date
+OPTIONS (
+  description = "partition column"
+);
 ```
 
 <br />
