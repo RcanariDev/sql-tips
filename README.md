@@ -712,7 +712,8 @@ from DimDireccion
 <br />
 
 - Se utiliza: `nombre_columna`
-- 
+
+
 <br/>
 
 ```r
