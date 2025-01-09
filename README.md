@@ -709,10 +709,6 @@ from DimDireccion
 
 ## 29. Crear campo de tabla con PALABRA RESERVADA
 
-<br />
-
-- Se utiliza: `nombre_columna`
-
 
 <br/>
 
