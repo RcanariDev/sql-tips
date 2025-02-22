@@ -733,3 +733,18 @@ OPTIONS (
 <br />
 
 
+
+## 30. Uso de DATETIME en BigQuery
+
+
+<br/>
+
+
+
+
+
+<br />
+<br />
+<br />
+
+
